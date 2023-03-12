@@ -15,7 +15,7 @@ data "aws_subnet" "this" {
     vpc_id  = var.vpc_id
     filter {
         name    = "availabilityZone"
-        values  = ["us-east-1c"]
+        values  = ["us-east-2a"]
     }
 }
 
