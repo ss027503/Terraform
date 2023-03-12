@@ -3,7 +3,7 @@ variable "aws_region" {
 }
 
 variable "vpc_id" {
-    default = ""
+    default = "vpc-87d13fee"
 }
 
 variable "root_volume_size" {
@@ -12,8 +12,4 @@ variable "root_volume_size" {
 
 variable "home_ip" {
     default = "76.222.214.143"
-}
-
-variable "vpc_id" {
-    default = "vpc-87d13fee"
 }
