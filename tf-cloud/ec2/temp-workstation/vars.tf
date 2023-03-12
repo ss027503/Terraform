@@ -13,3 +13,11 @@ variable "root_volume_size" {
 variable "home_ip" {
     default = ""
 }
+
+variable "instance_type" {
+    default = "t3.small"
+}
+
+varaible "instance_key" {
+    default = "home-use2"
+}
