@@ -21,3 +21,7 @@ variable "instance_type" {
 variable "instance_key" {
     default = "home-use2"
 }
+
+variable "host_name" {
+    default = "mywintemp"
+}

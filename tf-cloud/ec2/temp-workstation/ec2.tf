@@ -2,7 +2,7 @@ resource "aws_instance" "this" {
     ami                     = data.aws_ami.win2022.id
     instance_type           = var.instance_type
     vpc_security_group_ids  = [aws_security_group.this.id]
-    subnet_id               = var.instance_subnet
+    subnet_id               = data.aws_subnet.this
     key_name                = var.instance_key
 
     user_data = <<-EOF
