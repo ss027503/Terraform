@@ -11,5 +11,5 @@ variable "root_volume_size" {
 }
 
 variable "home_ip" {
-    default = "76.222.214.143"
+    default = ""
 }
