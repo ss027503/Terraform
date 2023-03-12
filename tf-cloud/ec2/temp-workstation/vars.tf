@@ -25,3 +25,7 @@ variable "instance_key" {
 variable "host_name" {
     default = "mywintemp"
 }
+
+variable "project_name" {
+    default = "temp-workstation"  
+}

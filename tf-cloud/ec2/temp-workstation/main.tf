@@ -17,7 +17,7 @@ provider "aws" {
     default_tags {
         tags = {
             region = "${var.aws_region}"
-            project = "${local.project_name}"
+            project = "${var.project_name}"
         }
     }
 }
