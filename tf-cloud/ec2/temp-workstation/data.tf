@@ -11,11 +11,10 @@ data "aws_ami" "win2022" {
     owners              = ["amazon"]
 }
 
-data "aws_subnet" "this" {
+data "aws_subnet" "use2a" {
     vpc_id  = var.vpc_id
     filter {
         name    = "availabilityZone"
         values  = ["us-east-2a"]
     }
 }
-
