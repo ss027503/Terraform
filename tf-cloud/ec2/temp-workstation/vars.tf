@@ -18,6 +18,6 @@ variable "instance_type" {
     default = "t3.small"
 }
 
-varaible "instance_key" {
+variable "instance_key" {
     default = "home-use2"
 }
