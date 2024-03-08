@@ -1,3 +1,10 @@
+locals {
+    set_ips = [
+        var.home_ip,
+        var.extra_ip
+    ]
+}
+
 # resource "aws_security_group" "this" {
 #     name            = "connect-from-home-sg"
 #     vpc_id          = var.vpc_id
@@ -34,12 +41,12 @@ module "aws_security_group" {
         {
             rule = "rdp-tcp"
             description = "rdp"
-            cidr_blocks = tolist(["${var.home_ip}", "${var.extra_ip}"])
+            cidr_blocks = join(",", local.set_ips)
         },
         {
             rule = "ssh-tcp"
             description = "ssh"
-            cidr_blocks = tolist(["${var.home_ip}", "${var.extra_ip}"])
+            cidr_blocks = join(",", local.set_ips)
         }
     ]
 }
