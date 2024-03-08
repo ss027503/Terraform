@@ -29,3 +29,7 @@ variable "host_name" {
 variable "project_name" {
     default = "temp-workstation"  
 }
+
+variable "new_admin_pw" {
+    default = ""
+}

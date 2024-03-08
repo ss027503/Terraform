@@ -10,6 +10,9 @@ resource "aws_instance" "this" {
         Set-ExecutionPolicy -ExecutionPolicy unrestricted
         Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
         Rename-Computer -NewName "${var.host_name}" -Force
+        $Password = ${var.new_admin_pw} -AsSecureString
+        $UserAccount = Get-LocalUser -Name "Administrator"
+        $UserAccount | Set-LocalUser -Password $Password
         Set-TimeZone -Name "Central Standard Time"
         choco install -y firefox putty winscp 7zip notepadplusplus vlc sumatrapdf pia
         
