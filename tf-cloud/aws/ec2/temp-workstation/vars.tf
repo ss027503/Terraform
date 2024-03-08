@@ -10,7 +10,7 @@ variable "root_volume_size" {
     default = ""
 }
 
-variable "home_ip" {
+variable "current_ip" {
     default = ""
 }
 
