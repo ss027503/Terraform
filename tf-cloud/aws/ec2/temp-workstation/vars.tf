@@ -14,6 +14,11 @@ variable "home_ip" {
     default = ""
 }
 
+variable "extra_ip" {
+    description = "An additional IP to allow in RDP and SSH"
+    default = ""
+}
+
 variable "instance_type" {
     default = ""
 }
