@@ -15,7 +15,7 @@ variable "home_ip" {
 }
 
 variable "instance_type" {
-    default = "t3.xlarge"
+    default = ""
 }
 
 variable "instance_key" {
@@ -23,7 +23,7 @@ variable "instance_key" {
 }
 
 variable "host_name" {
-    default = "temp_win_use2"
+    default = ""
 }
 
 variable "project_name" {
