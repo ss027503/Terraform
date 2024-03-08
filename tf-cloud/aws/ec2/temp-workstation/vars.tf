@@ -7,7 +7,7 @@ variable "vpc_id" {
 }
 
 variable "root_volume_size" {
-    default = 60
+    default = ""
 }
 
 variable "home_ip" {
