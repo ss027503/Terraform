@@ -23,3 +23,23 @@ resource "aws_security_group" "this" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+module "aws_security_group" {
+    source = "terraform-aws-modules/security-group/aws"
+    version = "~> 3.0"
+    name = "${var.host_name}-sg"
+    description = "does this matter?"
+    vpc_id = var.vpc_id
+    ingress_with_cidr_blocks = [
+        {
+            rule = "rdp-tcp"
+            description = "rdp"
+            cidr_blocks = join(",", var.home_ip, var.extra_ip)
+        },
+        {
+            rule = "ssh-tcp"
+            description = "ssh"
+            cidr_blocks = join(",", var.home_ip, var.extra_ip)
+        }
+    ]
+}
