@@ -26,7 +26,7 @@
 
 module "aws_security_group" {
     source = "terraform-aws-modules/security-group/aws"
-    version = "~> 3.0"
+    version = "~> 5.0"
     name = "${var.host_name}-sg"
     description = "does this matter?"
     vpc_id = var.vpc_id
