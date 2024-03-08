@@ -34,12 +34,12 @@ module "aws_security_group" {
         {
             rule = "rdp-tcp"
             description = "rdp"
-            cidr_blocks = join(",", var.home_ip, var.extra_ip)
+            cidr_blocks = tolist(["${var.home_ip}", "${var.extra_ip}"])
         },
         {
             rule = "ssh-tcp"
             description = "ssh"
-            cidr_blocks = join(",", var.home_ip, var.extra_ip)
+            cidr_blocks = tolist(["${var.home_ip}", "${var.extra_ip}"])
         }
     ]
 }
